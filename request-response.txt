@@ -1,0 +1,81 @@
+
+inside an {} in routes is a variable i.e (posts/{id})
+
+
+requests_format = {
+    // LOGIN
+    (POST)/login : {
+            request_format {
+                "email" : ""
+                "password" : ""
+            },
+            response_format {
+                "message" : "Logged in as {name}"
+                "user" : {
+                    "user": "John Bocabo",
+                    "token": "8|XTzJOD4G4MuJSk6BASXuPwNhsWvIyYtJhopFxQCce765102e",
+                    "message": "User logged in successfully"
+                }
+            }
+        }
+    }
+    // CREATE
+    (POST)/posts : {
+        request_format{
+            "title" : ""
+            "content" : "",
+        }
+        response_format : {
+            "id": 2,
+            "title": "",
+            "content": "",
+            "createdAt": ""
+        }
+    }
+    // UPDATE
+    (PUT)/posts/{id} : {
+        request_format{
+            "title" : ""
+            "content" : ""
+        }
+        response_format : {
+            "message": "Post updated",
+            "post": {
+                "id": 2,
+                "user_id": 2,
+                "title": "title updated",
+                "content": "content updated",
+                "created_at": "2025-01-27T04:08:32.000000Z",
+                "updated_at": "2025-02-03T04:14:39.000000Z"
+            }
+        }
+    }
+    //DELETE
+    (DELETE)/posts/{id} : {
+        response_format : {
+            "message": "Post deleted"
+        }
+    }
+    //READ
+    (GET)/posts : response_format :
+    {
+        "data" : {[
+            {
+                "id": 2,
+                "title": "",
+                "content": "",
+                "createdAt": ""
+            }
+        ]}
+    }
+    // READ BY ID
+    (GET)/posts/{id} :
+    response_format :
+    {
+        "data": {
+            "id": 2,
+            "title": "test 2 diff user",
+            "content": "test 1 content hasdhjahsjd",
+            "createdAt": "2025-01-27T04:08:32.000000Z"
+        }
+    }

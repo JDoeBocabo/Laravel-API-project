@@ -1,0 +1,4 @@
+create at least a simple database schema with few db relationships.
+
+practice how to  organize json responses
+document each responces.
