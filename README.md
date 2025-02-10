@@ -1,7 +1,20 @@
-This project is an API service to provide a backend functionality for my project which is a I think would be a X/twitter clone.
-Or atleast that's what i'm tryiing to do cause i cant think of any ideas of what to build to showcase my skills in my personal portfolio.
+Been trying to learn how to build REST API using Laravel and trying apply the best practices building it.
+Trying to do this from scratch to really understand concepts and how it all works in laravel.
 
-Anyways, HAHA.
+If you are knowledgable in laravel and you think im doing something wrongill be happy to hear it 😁😊.
 
-While im building this, im also trying to learn backend development. So if you think i'm doing something wrong or you have something to suggest or tips for me. please feel free (actually dri talaga ak sure kun nag aano ak. HAHAHA).
+Im trying to make a simple social media app in this and planning to use react in the client side.
+
+typical social media:
+    posts CRUD
+    reactions 
+    comments CRUD
+    feed
+    following/followers
+    Profiles
+    
+Please, if you are here and you think you know more than me in doing this. I would be very happy to  hear your thoughts.
+
+thank you in advance 😁👌
+
 
