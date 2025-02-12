@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Classes\ApiResponses;
 use App\Http\Resources\PostResource;
 use App\Models\Post;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Routing\Controllers\Middleware;
@@ -83,30 +82,10 @@ class PostController extends Controller implements HasMiddleware
      */
     public function destroy(Post $post)
     {
-        Gate::authorize('user-post-authorization', $post);
-        $post->delete();
-        return [ "message" => "Post deleted" ];
-    }
-
-    public function addComment(Request $request)
-    {
         try {
-            $comment = $request->validate([
-                'comment' => ['required', 'string', 'min:5'],
-                'postId' => ['required', 'integer'],
-            ]);
-
-            $user = $request->user();
-            $post = Post::findOrFail($comment['postId']);
-
-            $post->comments()->create([
-                'comment' => $comment['comment'],
-                'user_id' => $user->id
-            ]);
-
-            return ApiResponses::sendSuccessResponse("Comment added", null, true, $comment);
-        } catch (ModelNotFoundException $e) {
-            return ApiResponses::sendErrorResponse("Post not found", $e);
+            Gate::authorize('user-post-authorization', $post);
+            $post->delete();
+            return ApiResponses::sendSuccessResponse("Post deleted", null, true, []);
         } catch (\Exception $e) {
             return ApiResponses::sendErrorResponse("Something went wrong", $e);
         }
